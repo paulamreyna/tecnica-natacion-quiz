@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swim Quiz · Natación</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="water" aria-hidden="true">
+    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+  </div>
+
+  <header class="topbar">
+    <h1 data-i18n="title">Técnica de Natación</h1>
+    <div class="lang" role="group" aria-label="Language">
+      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Start -->
+    <section id="screen-start" class="card screen active">
+      <div class="big-emoji">🏊</div>
+      <h2 data-i18n="startTitle">¿Sabés nadar bien?</h2>
+      <p data-i18n="startText">Te mostramos ejercicios de natación. Decidí si la técnica descripta es CORRECTA o INCORRECTA.</p>
+      <button id="btn-start" class="btn primary" data-i18n="start">Empezar</button>
+    </section>
+
+    <!-- Question -->
+    <section id="screen-quiz" class="card screen">
+      <div class="progress-row">
+        <span id="progress-text"></span>
+        <span class="score-pill">⭐ <span id="score">0</span></span>
+      </div>
+      <div class="progress"><div id="progress-bar"></div></div>
+
+      <div class="stroke-tag" id="stroke"></div>
+      <div class="illus" id="illus" aria-hidden="true"></div>
+      <h2 id="exercise-name"></h2>
+      <p id="exercise-desc" class="desc"></p>
+
+      <div class="answers">
+        <button class="btn answer ok" data-answer="true">✅ <span data-i18n="correct">Correcto</span></button>
+        <button class="btn answer bad" data-answer="false">❌ <span data-i18n="incorrect">Incorrecto</span></button>
+      </div>
+
+      <div id="feedback" class="feedback hidden" role="status" aria-live="polite">
+        <strong id="feedback-title"></strong>
+        <p id="feedback-text"></p>
+        <button id="btn-next" class="btn primary" data-i18n="next">Siguiente</button>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="screen-end" class="card screen">
+      <div class="big-emoji" id="end-emoji">🏆</div>
+      <h2 data-i18n="endTitle">¡Terminaste!</h2>
+      <p class="final"><span id="final-score"></span></p>
+      <p id="end-msg"></p>
+      <button id="btn-restart" class="btn primary" data-i18n="restart">Jugar de nuevo</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
